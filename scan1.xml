@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94 scan initiated Fri Oct 31 10:15:23 2025 as: nmap -sV -oX scan1.xml 192.168.1.0/24 -->
+<nmaprun scanner="nmap" args="nmap -sV -oX scan1.xml 192.168.1.0/24" start="1730368523" startstr="Fri Oct 31 10:15:23 2025" version="7.94" xmloutputversion="1.05">
+  <scaninfo type="syn" protocol="tcp" numservices="1000" services="1-1000"/>
+  <verbose level="0"/>
+  <debugging level="0"/>
+  
+  <!-- Host 1: Web Server -->
+  <host starttime="1730368524" endtime="1730368548">
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="192.168.1.10" addrtype="ipv4"/>
+    <address addr="00:1A:2B:3C:4D:5E" addrtype="mac" vendor="VMware"/>
+    <hostnames>
+      <hostname name="webserver.local" type="PTR"/>
+    </hostnames>
+    <ports>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" product="OpenSSH" version="8.9p1 Ubuntu 3ubuntu0.4" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10">
+          <cpe>cpe:/a:openbsd:openssh:8.9p1</cpe>
+          <cpe>cpe:/o:linux:linux_kernel</cpe>
+        </service>
+      </port>
+      <port protocol="tcp" portid="80">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="http" product="Apache httpd" version="2.4.52" extrainfo="(Ubuntu)" method="probed" conf="10">
+          <cpe>cpe:/a:apache:http_server:2.4.52</cpe>
+        </service>
+      </port>
+      <port protocol="tcp" portid="443">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="https" product="Apache httpd" version="2.4.52" extrainfo="(Ubuntu)" tunnel="ssl" method="probed" conf="10">
+          <cpe>cpe:/a:apache:http_server:2.4.52</cpe>
+        </service>
+      </port>
+      <port protocol="tcp" portid="3306">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="mysql" product="MySQL" version="8.0.35" extrainfo="MySQL Community Server" method="probed" conf="10">
+          <cpe>cpe:/a:mysql:mysql:8.0.35</cpe>
+        </service>
+      </port>
+    </ports>
+    <times srtt="1234" rttvar="5678" to="100000"/>
+  </host>
+  
+  <!-- Host 2: Database Server -->
+  <host starttime="1730368550" endtime="1730368570">
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="192.168.1.20" addrtype="ipv4"/>
+    <address addr="00:1A:2B:3C:4D:5F" addrtype="mac" vendor="Dell"/>
+    <hostnames>
+      <hostname name="database.local" type="PTR"/>
+    </hostnames>
+    <ports>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" product="OpenSSH" version="8.2p1 Ubuntu 4ubuntu0.9" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10">
+          <cpe>cpe:/a:openbsd:openssh:8.2p1</cpe>
+        </service>
+      </port>
+      <port protocol="tcp" portid="5432">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="postgresql" product="PostgreSQL DB" version="14.9" method="probed" conf="10">
+          <cpe>cpe:/a:postgresql:postgresql:14.9</cpe>
+        </service>
+      </port>
+      <port protocol="tcp" portid="6379">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="redis" product="Redis key-value store" version="7.0.11" method="probed" conf="10">
+          <cpe>cpe:/a:redis:redis:7.0.11</cpe>
+        </service>
+      </port>
+    </ports>
+    <times srtt="1345" rttvar="4567" to="100000"/>
+  </host>
+  
+  <!-- Host 3: Legacy Server (with security concerns) -->
+  <host starttime="1730368572" endtime="1730368590">
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="192.168.1.50" addrtype="ipv4"/>
+    <address addr="00:1A:2B:3C:4D:60" addrtype="mac" vendor="HP"/>
+    <hostnames>
+      <hostname name="legacy.local" type="PTR"/>
+    </hostnames>
+    <ports>
+      <port protocol="tcp" portid="21">
+        <state state="open" reason="syn-ack" reason_ttl="128"/>
+        <service name="ftp" product="vsftpd" version="2.3.4" method="probed" conf="10">
+          <cpe>cpe:/a:vsftpd:vsftpd:2.3.4</cpe>
+        </service>
+      </port>
+      <port protocol="tcp" portid="23">
+        <state state="open" reason="syn-ack" reason_ttl="128"/>
+        <service name="telnet" product="Linux telnetd" method="probed" conf="10"/>
+      </port>
+      <port protocol="tcp" portid="445">
+        <state state="open" reason="syn-ack" reason_ttl="128"/>
+        <service name="smb" product="Samba smbd" version="3.6.25" extrainfo="workgroup: WORKGROUP" method="probed" conf="10">
+          <cpe>cpe:/a:samba:samba:3.6.25</cpe>
+        </service>
+      </port>
+      <port protocol="tcp" portid="3389">
+        <state state="open" reason="syn-ack" reason_ttl="128"/>
+        <service name="rdp" product="Microsoft Terminal Services" method="probed" conf="10"/>
+      </port>
+    </ports>
+    <times srtt="2345" rttvar="3456" to="100000"/>
+  </host>
+  
+  <!-- Host 4: Down host -->
+  <host starttime="1730368592" endtime="1730368595">
+    <status state="down" reason="no-response" reason_ttl="0"/>
+    <address addr="192.168.1.100" addrtype="ipv4"/>
+    <times srtt="0" rttvar="0" to="100000"/>
+  </host>
+  
+  <!-- Host 5: Modern Application Server -->
+  <host starttime="1730368596" endtime="1730368615">
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="192.168.1.30" addrtype="ipv4"/>
+    <address addr="00:1A:2B:3C:4D:61" addrtype="mac" vendor="Amazon"/>
+    <hostnames>
+      <hostname name="app-server.local" type="PTR"/>
+    </hostnames>
+    <ports>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" product="OpenSSH" version="9.2p1 Debian 2+deb12u1" extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10">
+          <cpe>cpe:/a:openbsd:openssh:9.2p1</cpe>
+        </service>
+      </port>
+      <port protocol="tcp" portid="27017">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="mongodb" product="MongoDB" version="6.0.11" method="probed" conf="10">
+          <cpe>cpe:/a:mongodb:mongodb:6.0.11</cpe>
+        </service>
+      </port>
+      <port protocol="tcp" portid="9200">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="elasticsearch" product="Elasticsearch REST API" version="8.10.4" method="probed" conf="10"/>
+      </port>
+    </ports>
+    <times srtt="1456" rttvar="3789" to="100000"/>
+  </host>
+  
+  <runstats>
+    <finished time="1730368615" timestr="Fri Oct 31 10:16:55 2025" summary="Nmap done at Fri Oct 31 10:16:55 2025; 256 IP addresses (5 hosts up) scanned in 92.34 seconds" elapsed="92.34" exit="success"/>
+    <hosts up="4" down="1" total="5"/>
+  </runstats>
+</nmaprun>
