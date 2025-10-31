@@ -67,10 +67,26 @@ python main.py myscan.xml
 ```
 ## 📂 Explore the Project
 
-- 📁 [samples/](./samples/) — Sample Nmap scan files
-- 📁 [src/](./src/) — Core analyzer modules
-- 📁 [local/](./local/) — Output logs and screenshots
-- 📁 [docs/](./docs/) — Guides and documentation (if applicable)
+- 📁 [samples/](./samples/) — Sample Nmap scan files  
+  └── 📄 [scan1.xml](./samples/scan1.xml) — Example scan output for testing
+
+- 📁 [src/](./src/) — Core analyzer modules  
+  └── 📄 [nmap_analyzer.py](./src/nmap_analyzer.py) — Main analyzer logic
+
+- 📁 [filters/](./filters/) — Filtering modules  
+  ├── 📄 [filter_by_ip.py](./filters/filter_by_ip.py)  
+  ├── 📄 [filter_by_port.py](./filters/filter_by_port.py)  
+  └── 📄 [filter_by_protocol.py](./filters/filter_by_protocol.py)
+
+- 📁 [tests/](./tests/) — Unit tests  
+  └── 📄 [test_nmap_analyzer.py](./tests/test_nmap_analyzer.py)
+
+- 📄 [main.py](./main.py) — CLI entry point  
+- 📄 [requirements.txt](./requirements.txt) — Python dependencies  
+- 📄 [README.md](./README.md) — Project overview  
+- 📄 [GETTING_STARTED.md](./GETTING_STARTED.md) — Beginner’s guide  
+- 📄 [LICENSE](./LICENSE) — MIT License
+
 
 ## 📁 Project Structure
 
