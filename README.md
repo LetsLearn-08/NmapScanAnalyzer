@@ -65,6 +65,12 @@ nmap -sV -oX myscan.xml 192.168.1.0/24
 # Then analyze it
 python main.py myscan.xml
 ```
+## 📂 Explore the Project
+
+- 📁 [samples/](./samples/) — Sample Nmap scan files
+- 📁 [src/](./src/) — Core analyzer modules
+- 📁 [local/](./local/) — Output logs and screenshots
+- 📁 [docs/](./docs/) — Guides and documentation (if applicable)
 
 ## 📁 Project Structure
 
